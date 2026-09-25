@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>local.agenda-mcp</string>
+    <key>CFBundleName</key>
+    <string>AgendaMCP</string>
+    <key>NSCalendarsFullAccessUsageDescription</key>
+    <string>AgendaMCP reads your calendar events so an AI assistant can answer questions about your schedule.</string>
+    <key>NSRemindersFullAccessUsageDescription</key>
+    <string>AgendaMCP reads your reminders so an AI assistant can answer questions about your tasks.</string>
+</dict>
+</plist>
