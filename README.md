@@ -6,11 +6,14 @@ official [MCP Swift SDK](https://github.com/modelcontextprotocol/swift-sdk), pin
 Requires macOS 14+ and Swift 6.
 
 ## Tools
-| Tool | Arguments |
-|---|---|
-| `list_calendars` | `type`: `events` \| `reminders` |
-| `list_events` | `start`, `end` (ISO 8601; default next 7 days), `calendars`, `query` |
-| `list_reminders` | `status` (`incomplete` \| `completed` \| `all`), `due_start`, `due_end`, `lists` |
+| Tool | Description | Arguments | Example |
+|---|---|---|---|
+| `list_calendars` | Lists your calendars (which hold events) or your reminder lists. | `type`: `events` \| `reminders` (default `events`) | `{"type": "reminders"}` |
+| `list_events` | Lists calendar events in a date range (at most 4 years), optionally filtered by calendar or by text in the title, location, or notes. | `start`, `end` (ISO 8601; default now to 7 days later), `calendars` (titles or identifiers), `query` | `{"start": "2026-09-23", "end": "2026-09-30", "calendars": ["Work"], "query": "standup"}` |
+| `list_reminders` | Lists reminders sorted by due date, filtered by status and optionally by due date range and reminder list. | `status`: `incomplete` \| `completed` \| `all` (default `incomplete`), `due_start` (inclusive), `due_end` (exclusive), `lists` (titles or identifiers) | `{"status": "incomplete", "due_end": "2026-10-01", "lists": ["Groceries"]}` |
+
+All arguments are optional. Dates are ISO 8601 (e.g. `2026-09-23` or `2026-09-23T09:00:00`); times without an
+offset are in your local time zone. All tools are read-only.
 
 ## Build & test
     swift build -c release      # → .build/release/agenda-mcp
